@@ -1,15 +1,6 @@
 module.exports = {
   darkMode: "class",
-  content: [
-    "./src//partials/Header.html",
-    "./src/partials/Footer.html",
-    "./src/Home.html",
-    "./src/Login.html",
-    "./src/Verification.html",
-    "./src/NumberEnter.html",
-    "./src/ProductPage.html",
-    "./src/404.html",
-  ],
+  content: [    './pages/**/*.{html,js}',"./index.html"],
   theme: {
     extend: {
       width: {
