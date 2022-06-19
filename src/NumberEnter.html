@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شماره را وارد کنید</title>
+    <link rel="stylesheet" href="/dist/output.css">
+    <style>
+        @font-face {
+            font-family: vazir;
+            src: url('/src/fonts/vazir-font-v18.0.0/Vazir.eot');
+            src: url('/src/fonts/vazir-font-v18.0.0/Vazir.eot#iefix') format('FontName-opentype'),
+                url('/src/fonts/vazir-font-v18.0.0/Vazir.woff') format('woff'),
+                url('/src/fonts/vazir-font-v18.0.0/Vazir.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body style="font-family: vazir;" onload="MenuToggle()">
+    <header dir="rtl">
+
+
+        <div class="bg-zinc-100 shadow-md shadow-purple-300">
+            <div class="container px-6 py-3 mx-auto">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+                    <div class="flex items-center justify-between ">
+                        <div class="flex items-center capitalize">
+                            <h3 class="text-2xl cursor-pointer text-gray-800  font-bold lg:text-3xl " href="#">Negar<a
+                                    class="text-purple-500">Shop</a>
+                            </h3>
+                            <!-- searchbox  on large screens-->
+
+                            <div class="relative hidden md:block w-64 md:w-80 lg:w-128 lg:mr-10 md:mr-8 ">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <svg class="w-5 h-5 text-gray-400 hover:text-purple-500 cursor-pointer"
+                                        viewBox="0 0 24 24" fill="none">
+                                        <path
+                                            d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+
+                                <input type="text"
+                                    class="w-full  py-3 pl-10 pr-4 rounded-xl text-gray-700 bg-white border shadow-lg  focus:shadow-lg focus:outline-none focus:ring-opacity-40  duration-300"
+                                    placeholder="جست و جو در محصولات...">
+                            </div>
+
+                        </div>
+                        <!-- hamburger icon and other on mobile -->
+                        <div class="flex md:hidden">
+
+                            <!-- login icon -->
+                            <div
+                                class="flex hover:text-cyan-500 duration-300 items-center rounded-lg p-2 cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                                </svg>
+
+                            </div>
+                            <!-- cart icon: mobile size -->
+                            <div
+                                class=" flex bg-purple-500 text-white hover:bg-purple-300 duration-300 items-center rounded-lg p-2 cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 " viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path
+                                        d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                </svg>
+
+                                <a class="rounded-xl mr-auto px-2 bg-white text-black">
+                                    0
+                                </a>
+
+                            </div>
+                            <!-- hamburger -->
+                            <button type="button" onclick="MenuToggle()"
+                                class=" text-black mr-2  hover:text-gray-600 focus:outline-none focus:text-gray-600"
+                                aria-label="toggle menu">
+                                <svg viewBox="0 0 24 24" class="w-8 h-8 fill-current">
+                                    <path fill-rule="evenodd"
+                                        d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+                                    </path>
+                                </svg>
+                            </button>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="items-center md:flex">
+                        <!-- desktop icon -->
+                        <div class="hidden md:flex items-center -mx-1md:mx-0">
+
+                            <div
+                                class="w-full text-center cursor-pointer hover:text-cyan-600 border-2 rounded-lg border-cyan-600 md:border-none duration-300 mx-4">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                                </svg>
+                                <h2>
+                                    ورود
+                                </h2>
+                            </div>
+
+
+                        </div>
+                        <div
+                            class=" hidden bg-purple-500 w-40 duration-700 text-white hover:bg-purple-600  md:flex items-center rounded-lg p-2 cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 " viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path
+                                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                            </svg>
+                            <h3 class="mr-2">سبد خرید</h3>
+                            <a class="rounded-xl mr-auto px-2 bg-white text-black">
+                                0
+                            </a>
+                        </div>
+
+                        <div class="mt-3 md:hidden">
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <svg class="w-5 h-5 text-gray-400 hover:text-purple-500 cursor-pointer"
+                                        viewBox="0 0 24 24" fill="none">
+                                        <path
+                                            d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+
+                                <input type="text"
+                                    class="w-full py-2 pl-10 pr-4 rounded-xl text-gray-700 bg-white border  focus:shadow-lg focus:outline-none focus:ring-opacity-40  duration-300"
+                                    placeholder="جست و جو در محصولات...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- navigation sections both mobile and desktop -->
+            <nav dir="rtl" class="bg-white shadow-purple-500">
+                <!-- desktop -->
+                <div class="hidden md:flex container  items-center justify-around  mx-auto text-gray-800 capitalize">
+                    <a href="#"
+                        class="hover:bg-gray-300 hover:bg-opacity-40 rounded-md p-7 px-8 duration-200  mx-1.5 ">کالای
+                        دیجیتال</a>
+
+                    <a href="#" class="hover:bg-gray-300  hover:bg-opacity-40 rounded-lg p-7 duration-200   mx-1.5 ">
+                        آرایشی و بهداشتی</a>
+
+                    <a href="#"
+                        class="hover:bg-gray-300 hover:bg-opacity-40 rounded-lg p-7  duration-200   mx-1.5  ">ابزار
+                        اداری</a>
+
+                    <a href="#" class="hover:bg-gray-300 hover:bg-opacity-40 rounded-lg p-7  duration-200   mx-1.5  ">مد
+                        و پوشاک</a>
+
+                    <a href="#"
+                        class="hover:bg-gray-300 hover:bg-opacity-40 rounded-lg p-7  duration-200    mx-1.5  ">خانه و
+                        آشپزخانه</a>
+
+                    <a href="#"
+                        class="hover:bg-gray-300 hover:bg-opacity-40 rounded-lg p-7  duration-200    mx-1.5  ">کودک و
+                        نوزاد</a>
+
+                </div>
+                <!-- mobile nav -->
+                <div
+                    class="flex mobile-menu z-50 md:hidden fixed top-0  right-0 flex-col w-60 bg-white text-gray-900 h-screen px-4 p-6 ease-in-out transition duration-200">
+
+                    <!-- logo -->
+                    <h3 class="text-2xl  font-bold cursor-pointer text-gray-800  lg:text-3xl hover:text-gray-700  "
+                        href="#">Negar<a class="text-purple-500">Shop</a></h3>
+                    <hr class="  my-3 border-gray-200 dark:border-gray-600" />
+                    <!-- navigations-->
+                    <div class="flex flex-col justify-between flex-1 mt-6">
+                        <nav>
+                            <a class="flex items-center px-4 py-2 hover:bg-gray-200 rounded-md t href=" # ">
+                                
+                                <img src=" https://img.icons8.com/ios/50/000000/tv.png " class=" w-5 h-5 "/>
+                                <span class=" mx-4 font-medium ">کالای دیجیتال</span>
+                            </a>
+            
+                            <a class=" flex items-center px-4 py-2 mt-5 duration-200 rounded-md
+                                hover:bg-gray-200 " href=" # ">
+                                <img src=" https://img.icons8.com/carbon-copy/100/000000/lip-gloss.png " class=" w-5
+                                h-5 "/>
+                                <span class=" mx-4 font-medium ">آرایشی و بهداشتی</span>
+                            </a>
+            
+                            <a class=" flex items-center px-4 py-2 mt-5 hover:bg-gray-200 rounded-md " href=" # ">
+                                <img src="
+                                https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-office-real-estate-flatart-icons-outline-flatarticons.png " class="
+                                w-5 h-5 "/>
+                                <span class=" mx-4 font-medium ">ابذار اداری</span>
+                            </a>
+            
+                            <a class=" flex items-center px-4 py-2 mt-5 hover:bg-gray-200 rounded-md " href=" # ">
+                            <svg xmlns=" http://www.w3.org/2000/svg " class=" h-6 w-6 " fill=" none " viewBox=" 0 0 24
+                                24 " stroke=" currentColor ">
+                                <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 " d=" M3
+                                12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0
+                                001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6 " />
+                            </svg>
+                                <span class=" mx-4 font-medium ">خانه و آشپزخانه</span>
+                            </a>
+            
+                            
+            
+                            <a class=" flex items-center px-4 py-2 mt-5 hover:bg-gray-200 rounded-md " href=" # ">
+                                <img src=" https://img.icons8.com/wired/64/000000/babys-room.png " class=" w-5 h-5 "/>
+                                <span class=" mx-4 font-medium ">کودک و نوزاد</span>
+                            </a>
+                           
+            
+                            <a class=" flex items-center px-4 py-2 mt-5 hover:bg-gray-200 rounded-md " href=" # ">
+                                <img src=" https://img.icons8.com/wired/64/000000/phone.png " class=" w-5 h-5 "/>
+                                <span class=" mx-4 font-medium ">تماس با ما</span>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            
+            </nav>
+            
+    </header>
+    <section>
+        <div class=" mt-1 bg-zinc-100 py-5 px-3">
+                                <div class="container mx-auto">
+                                    <div class="w-96 mx-auto">
+                                        <div class="w-full">
+                                            <div class="bg-white h-max w-full shadow-xl py-3 rounded-lg text-center">
+                                                <img src="/src/images/otpImage.png" class="h-48 w-48 mx-auto my-6"
+                                                    alt="">
+                                                <div class=" rounded-md py-2 mx-5 my-2 font-bold text-xl">
+                                                    <h1>
+                                                        شماره همراه
+                                                    </h1>
+                                                    <p class="text-sm my-2">
+                                                        .برای شماره همراهتان کد ۶ رقمی ارسال خواهد شد
+                                                    </p>
+                                                </div>
+                                                <div class="relative z-0 mb-6 mx-5 group">
+                                                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                                        name="floating_phone" id="floating_phone"
+                                                        class="block py-3 px-3 w-full text-sm text-gray-900 bg-gray-100 rounded-md border-b-2 border-purple-300 appearance-none  focus:outline-none focus:ring-0 focus:border-purple-600 peer"
+                                                        placeholder=" " required />
+                                                    <label for="floating_phone"
+                                                        class="absolute left-2 text-sm text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 z-10 origin-[0] peer-focus:left-0 peer-focus:text-purple-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">شماره
+                                                        همراه</label>
+                                                </div>
+                                                <div class="flex flex-col">
+                                                    <a href="/src/Verification.html" type=" submit"
+                                                        class="block mx-3 py-2 my-2 text-lg font-bold text-white border border-purple-500 bg-purple-500 hover:bg-white hover:text-purple-500 rounded-lg duration-300">
+                                                        ارسال شماره
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                </section>
+
+                                <div dir="rtl" class="text-white relative pb-1 border-t  border-purple-400">
+                                    <div class="flex justify-center">
+                                        <p class="absolute top-3 text-sm text-center text-gray-400 lg:text-left">
+                                            Copyright &copy; فروشگاه نگارشاپ ، تمامی حقوق این سایت محفوظ است.
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <script src="/src/js/NumberEnter.js"></script>
+</body>
+
+</html>

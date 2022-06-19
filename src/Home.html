@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه اصلی</title>
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+</head>
+<!-- declaring font-style -->
+<style>
+    @font-face {
+        font-family: vazir;
+        src: url('/src/fonts/vazir-font-v18.0.0/Vazir.eot');
+        src: url('/src/fonts/vazir-font-v18.0.0/Vazir.eot#iefix') format('FontName-opentype'),
+            url('/src/fonts/vazir-font-v18.0.0/Vazir.woff') format('woff'),
+            url('/src/fonts/vazir-font-v18.0.0/Vazir.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    /*swiper button style*/
+    .swiper-button-next {
+        color: white;
+        background: url(/src/images/prev.png);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+    }
+
+    .swiper-button-prev {
+        color: white;
+        background: url(/src/images/next.png);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+    }
+
+    /* main slider buttons for navigation*/
+    .swiper-button-prev.main {
+        color: white;
+        background: url(/src/images/prev.png);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+    }
+
+    .swiper-button-next.main {
+        color: white;
+        background: url(/src/images/next.png);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+    }
+</style>
+
+<body class="bg-white" style="font-family: 'vazir';" onload="MenuToggle()">
+    <a id="back2Top" href="#" class="fixed right-0 bottom-0 mr-6 mb-6 p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class=" bg-white h-10 w-10 p-2 text-purple-800 rounded-full border " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+          </svg>
+    </a>
+    <!-- Header section -->
+    <header id="top" dir="rtl">
+
+
+        <div class="bg-zinc-100 shadow-md shadow-purple-300">
+            <div class="container px-6 py-3 mx-auto">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-center">
+                    <div class="flex items-center justify-between ">
+                        <div class="flex items-center capitalize">
+                            <h3 class="text-2xl cursor-pointer text-gray-800  font-bold lg:text-3xl " href="#">Negar<a
+                                    class="text-purple-500">Shop</a>
+                            </h3>
+                            <!-- searchbox  on large screens-->
+
+                            <div class="relative hidden md:block w-64 md:w-80 lg:w-128 lg:mr-10 md:mr-8 ">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <svg class="w-5 h-5 text-gray-400 hover:text-purple-500 cursor-pointer"
+                                        viewBox="0 0 24 24" fill="none">
+                                        <path
+                                            d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+
+                                <input type="text"
+                                    class="w-full  py-3 pl-10 pr-4 rounded-xl text-gray-700 bg-white border shadow-lg  focus:shadow-lg focus:outline-none focus:ring-opacity-40  duration-300"
+                                    placeholder="جست و جو در محصولات...">
+                            </div>
+
+                        </div>
+                        <!-- hamburger icon and other on mobile -->
+                        <div class="flex md:hidden">
+
+                            <!-- login icon -->
+                            <div
+                                class="flex hover:text-cyan-500 duration-300 items-center rounded-lg p-2 cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                                </svg>
+
+                            </div>
+                            <!-- cart icon: mobile size -->
+                            <div
+                                class=" flex bg-purple-500 text-white hover:bg-purple-300 duration-300 items-center rounded-lg p-2 cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 " viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path
+                                        d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                                </svg>
+
+                                <a class="rounded-xl mr-auto px-2 bg-white text-black">
+                                    0
+                                </a>
+
+                            </div>
+                            <!-- hamburger -->
+                            <button type="button" onclick="MenuToggle()"
+                                class=" text-black mr-2  hover:text-gray-600 focus:outline-none focus:text-gray-600"
+                                aria-label="toggle menu">
+                                <svg viewBox="0 0 24 24" class="w-8 h-8 fill-current">
+                                    <path fill-rule="evenodd"
+                                        d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+                                    </path>
+                                </svg>
+                            </button>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="items-center md:flex">
+                        <!-- desktop icon -->
+                        <div class="hidden md:flex items-center -mx-1md:mx-0">
+
+                            <div
+                                class="w-full text-center cursor-pointer hover:text-cyan-600 border-2 rounded-lg border-cyan-600 md:border-none duration-300 mx-4">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                                </svg>
+                                <h2>
+                                    ورود
+                                </h2>
+                            </div>
+
+
+                        </div>
+                        <div
+                            class=" hidden bg-purple-500 w-40 duration-700 text-white hover:bg-purple-600  md:flex items-center rounded-lg p-2 cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 " viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path
+                                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
+                            </svg>
+                            <h3 class="mr-2">سبد خرید</h3>
+                            <a class="rounded-xl mr-auto px-2 bg-white text-black">
+                                0
+                            </a>
+                        </div>
+
+                        <div class="mt-3 md:hidden">
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <svg class="w-5 h-5 text-gray-400 hover:text-purple-500 cursor-pointer"
+                                        viewBox="0 0 24 24" fill="none">
+                                        <path
+                                            d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+
+                                <input type="text"
+                                    class="w-full py-2 pl-10 pr-4 rounded-xl text-gray-700 bg-white border  focus:shadow-lg focus:outline-none focus:ring-opacity-40  duration-300"
+                                    placeholder="جست و جو در محصولات...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- navigation sections both mobile and desktop -->
+            <nav dir="rtl" class="bg-white shadow-purple-500">
+                <!-- desktop -->
+                <div class="hidden md:flex container  items-center justify-around  mx-auto text-gray-800 capitalize">
+                    <a href="#"
+                        class="hover:bg-gray-300 hover:bg-opacity-40 rounded-md p-7 px-8 duration-200  mx-1.5 ">کالای
+                        دیجیتال</a>
+
+                    <a href="#" class="hover:bg-gray-300  hover:bg-opacity-40 rounded-lg p-7 duration-200   mx-1.5 ">
+                        آرایشی و بهداشتی</a>
+
+                    <a href="#"
+                        class="hover:bg-gray-300 hover:bg-opacity-40 rounded-lg p-7  duration-200   mx-1.5  ">ابزار
+                        اداری</a>
+
+                    <a href="#" class="hover:bg-gray-300 hover:bg-opacity-40 rounded-lg p-7  duration-200   mx-1.5  ">مد
+                        و پوشاک</a>
+
+                    <a href="#"
+                        class="hover:bg-gray-300 hover:bg-opacity-40 rounded-lg p-7  duration-200    mx-1.5  ">خانه و
+                        آشپزخانه</a>
+
+                    <a href="#"
+                        class="hover:bg-gray-300 hover:bg-opacity-40 rounded-lg p-7  duration-200    mx-1.5  ">کودک و
+                        نوزاد</a>
+
+                </div>
+                <!-- mobile nav -->
+                <div
+                    class="flex mobile-menu z-50 md:hidden fixed top-0  right-0 flex-col w-60 bg-white text-gray-900 h-screen px-4 p-6 ease-in-out transition duration-200">
+
+                    <!-- logo -->
+                    <h3 class="text-2xl  font-bold cursor-pointer text-gray-800  lg:text-3xl hover:text-gray-700  "
+                        href="#">Negar<a class="text-purple-500">Shop</a></h3>
+                    <hr class="  my-3 border-gray-200 dark:border-gray-600" />
+                    <!-- navigations-->
+                    <div class="flex flex-col justify-between flex-1 mt-6">
+                        <nav>
+                            <a class="flex items-center px-4 py-2 hover:bg-gray-200 rounded-md t href=" # ">
+                                
+                                <img src=" https://img.icons8.com/ios/50/000000/tv.png " class=" w-5 h-5 "/>
+                                <span class=" mx-4 font-medium ">کالای دیجیتال</span>
+                            </a>
+            
+                            <a class=" flex items-center px-4 py-2 mt-5 duration-200 rounded-md
+                                hover:bg-gray-200 " href=" # ">
+                                <img src=" https://img.icons8.com/carbon-copy/100/000000/lip-gloss.png " class=" w-5
+                                h-5 "/>
+                                <span class=" mx-4 font-medium ">آرایشی و بهداشتی</span>
+                            </a>
+            
+                            <a class=" flex items-center px-4 py-2 mt-5 hover:bg-gray-200 rounded-md " href=" # ">
+                                <img src="
+                                https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-office-real-estate-flatart-icons-outline-flatarticons.png " class="
+                                w-5 h-5 "/>
+                                <span class=" mx-4 font-medium ">ابذار اداری</span>
+                            </a>
+            
+                            <a class=" flex items-center px-4 py-2 mt-5 hover:bg-gray-200 rounded-md " href=" # ">
+                            <svg xmlns=" http://www.w3.org/2000/svg " class=" h-6 w-6 " fill=" none " viewBox=" 0 0 24
+                                24 " stroke=" currentColor ">
+                                <path stroke-linecap=" round " stroke-linejoin=" round " stroke-width=" 2 " d=" M3
+                                12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0
+                                001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6 " />
+                            </svg>
+                                <span class=" mx-4 font-medium ">خانه و آشپزخانه</span>
+                            </a>
+            
+                            
+            
+                            <a class=" flex items-center px-4 py-2 mt-5 hover:bg-gray-200 rounded-md " href=" # ">
+                                <img src=" https://img.icons8.com/wired/64/000000/babys-room.png " class=" w-5 h-5 "/>
+                                <span class=" mx-4 font-medium ">کودک و نوزاد</span>
+                            </a>
+                           
+            
+                            <a class=" flex items-center px-4 py-2 mt-5 hover:bg-gray-200 rounded-md " href=" # ">
+                                <img src=" https://img.icons8.com/wired/64/000000/phone.png " class=" w-5 h-5 "/>
+                                <span class=" mx-4 font-medium ">تماس با ما</span>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            
+            </nav>
+            
+    </header>
+    <!-- first section: slider and price off section -->
+    <section>
+        <!-- Main Slider -->
+        <div>
+            <div dir=" rtl" class="swiper swiper1 z-10 shadow-lg shadow-gray-300 item   sm:container mt-10 rounded-lg w-120 h-52 sm:h-64 md:h-72 lg:h-80 flex items-center text-center justify-center ">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper ">
+                                    <!-- Slides -->
+                                    <div class="swiper-slide h-max w-max ">
+                                        <a href="#">
+                                            <img src="/src/images/slide-img2.png " class="h-full w-full " alt=" ">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide h-max w-max ">
+                                        <a href="#">
+                                            <img src="/src/images/slide-img1.png " class="h-full w-full " alt=" ">
+                                        </a>
+                                    </div>
+                                    <div class="swiper-slide h-max w-max ">
+                                        <a href="#">
+                                            <img src="/src/images/slide-img3.png " class="h-full w-full " alt=" ">
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- If we need pagination -->
+                                <div class="swiper-pagination"></div>
+
+                                <!-- If we need navigation buttons -->
+                                <div class="after:hidden swiper-button-next main p-5 "></div>
+                                <div class="after:hidden swiper-button-prev main p-5 "></div>
+                    </div>
+                </div>
+
+
+                <!-- The section of BEST SELLERS AND OFFERS -->
+                <div dir="rtl" class="container mx-auto my-10  md:px-0">
+                    <h1 class="text-2xl text-center md:text-right p-2 text-gray-900">
+                        پیشنهادهای شگفت انگیز
+                    </h1>
+                    <div class="flex items-center gap-6 rounded-lg shadow-lg shadow-gray-300">
+
+                        <div class="flex bg-violet-300 rounded-lg lg:justify-start justify-center w-full">
+                            <div class="hidden p-2 w-1/4 lg:block text-center">
+                                <img src="/src/images/off.png" class="w-max h-80" alt="">
+                                <a href="#" class="text-xl text-white font-bold">
+                                    مشاهده همه
+                                </a>
+                            </div>
+
+
+                            <div dir="rtl" class="w-full md:w-3/4 md:p-2 lg:p-5">
+
+                                <!-- slider for offered products -->
+                                <div class="swiper mySwiper h-full w-full">
+                                    <div class="swiper-wrapper my-5 md:mt-5">
+                                        <!-- item1 -->
+                                        <div class="swiper-slide h-full w-full">
+                                            <div
+                                                class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                                <!-- image of product here -->
+                                                <img class="object-cover w-full h-32 md:h-44  p-7"
+                                                    src="/src/images/products/product-1.png" alt="">
+                                                <!-- product name HERE -->
+                                                <div class="p-1 border-b border-b-purple-500">
+                                                    <h1 class=" font-bold text-gray-800 text-center dark:text-white">
+                                                        لگ ورزشی اسپورت</h1>
+                                                </div>
+                                                <!-- product price and OFFPRICE HERE -->
+                                                <div
+                                                    class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                    <h1
+                                                        class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                        ۲۳۸,۰۰۰ تومان <del class="text-gray-500 text-xs">۲۸۰،۰۰۰</del>
+                                                    </h1>
+                                                    <!-- add to cart on mobile screen here -->
+                                                    <a href="#" class="flex lg:hidden">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </a>
+                                                    <!-- add to cart on desktop screen here -->
+                                                    <a href="#"
+                                                        class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                        <p class="mx-auto flex">
+                                                            خرید محصول
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                            </svg>
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!-- item2 -->
+                                        <div class="swiper-slide h-full w-full">
+
+                                            <div
+                                                class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                                <!-- image of product here -->
+                                                <img class="object-cover w-full h-32 md:h-44  p-7"
+                                                    src="/src/images/products/product-2.png" alt="">
+                                                <!-- product name HERE -->
+                                                <div class="p-1 border-b border-b-purple-500">
+                                                    <h1 class=" font-bold text-gray-800 text-center dark:text-white">
+                                                        کیف دانش آموزی</h1>
+                                                </div>
+                                                <!-- product price and OFFPRICE HERE -->
+                                                <div
+                                                    class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                    <h1
+                                                        class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                        ۳۲۹,۰۰۰ تومان <del class="text-gray-500 text-xs">۴۸۰,۰۰۰</del>
+                                                    </h1>
+                                                    <!-- add to cart on mobile screen here -->
+                                                    <a href="#" class="flex lg:hidden">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </a>
+                                                    <!-- add to cart on desktop screen here -->
+                                                    <a href="#"
+                                                        class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                        <p class="mx-auto flex">
+                                                            خرید محصول
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                            </svg>
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!-- item3 -->
+                                        <div class="swiper-slide h-max w-max">
+                                            <div
+                                                class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                                <!-- image of product here -->
+                                                <img class="object-cover w-full h-32 md:h-44  p-7"
+                                                    src="/src/images/products/product-3.png" alt="">
+                                                <!-- product name HERE -->
+                                                <div class="p-1 border-b border-b-purple-500">
+                                                    <h1 class=" font-bold text-gray-800 text-center">
+                                                        تلویزیون خانگی ۴۳ اینچ</h1>
+                                                </div>
+                                                <!-- product price and OFFPRICE HERE -->
+                                                <div
+                                                    class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                    <h1
+                                                        class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                        ۴,۴۹۹,۰۰۰ تومان <del
+                                                            class="text-gray-500 text-xs">۴,۹۰۰,۰۰۰</del></h1>
+                                                    <!-- add to cart on mobile screen here -->
+                                                    <a href="#" class="flex lg:hidden">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </a>
+                                                    <!-- add to cart on desktop screen here -->
+                                                    <a href="#"
+                                                        class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                        <p class="mx-auto flex">
+                                                            خرید محصول
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                            </svg>
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!-- item 4 -->
+                                        <div class="swiper-slide h-max w-max">
+                                            <div
+                                                class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                                <!-- image of product here -->
+                                                <img class="object-cover w-full h-32 md:h-44 p-7"
+                                                    src="/src/images/products/product-4.png" alt="">
+                                                <!-- product name HERE -->
+                                                <div class="p-1 border-b border-b-purple-500">
+                                                    <h1 class=" font-bold text-gray-800 text-center dark:text-white">
+                                                        ست چرم کادویی مردانه</h1>
+                                                </div>
+                                                <!-- product price and OFFPRICE HERE -->
+                                                <div
+                                                    class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                    <h1
+                                                        class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                        ۴۲۰,۰۰۰ تومان <del class="text-gray-500 text-xs">۸۸۰,۰۰۰</del>
+                                                    </h1>
+                                                    <!-- add to cart on mobile screen here -->
+                                                    <a href="#" class="flex lg:hidden">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </a>
+                                                    <!-- add to cart on desktop screen here -->
+                                                    <a href="#"
+                                                        class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                        <p class="mx-auto flex">
+                                                            خرید محصول
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                            </svg>
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!-- item 5 -->
+                                        <div class="swiper-slide h-max w-max">
+                                            <div
+                                                class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                                <!-- image of product here -->
+                                                <img class="object-cover w-full h-32 md:h-44  p-7"
+                                                    src="/src/images/products/product-1.png" alt="">
+                                                <!-- product name HERE -->
+                                                <div class="p-1 border-b border-b-purple-500">
+                                                    <h1 class=" font-bold text-gray-800 text-center dark:text-white">
+                                                        لگ ورزشی اسپورت</h1>
+                                                </div>
+                                                <!-- product price and OFFPRICE HERE -->
+                                                <div
+                                                    class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                    <h1
+                                                        class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                        ۲۳۸,۰۰۰ تومان <del class="text-gray-500 text-xs">۲۸۰،۰۰۰</del>
+                                                    </h1>
+                                                    <!-- add to cart on mobile screen here -->
+                                                    <a href="#" class="flex lg:hidden">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </a>
+                                                    <!-- add to cart on desktop screen here -->
+                                                    <a href="#"
+                                                        class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                        <p class="mx-auto flex">
+                                                            خرید محصول
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                            </svg>
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!-- item 6 -->
+                                        <div class="swiper-slide h-max w-max">
+                                            <div
+                                                class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                                <!-- image of product here -->
+                                                <img class="object-cover w-full h-32 md:h-44  p-7"
+                                                    src="/src/images/products/product-1.png" alt="">
+                                                <!-- product name HERE -->
+                                                <div class="p-1 border-b border-b-purple-500">
+                                                    <h1 class=" font-bold text-gray-800 text-center dark:text-white">
+                                                        لگ ورزشی اسپورت</h1>
+                                                </div>
+                                                <!-- product price and OFFPRICE HERE -->
+                                                <div
+                                                    class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                    <h1
+                                                        class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                        ۲۳۸,۰۰۰ تومان <del class="text-gray-500 text-xs">۲۸۰،۰۰۰</del>
+                                                    </h1>
+                                                    <!-- add to cart on mobile screen here -->
+                                                    <a href="#" class="flex lg:hidden">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </a>
+                                                    <!-- add to cart on desktop screen here -->
+                                                    <a href="#"
+                                                        class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                        <p class="mx-auto flex">
+                                                            خرید محصول
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                            </svg>
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- item 7 -->
+                                        <div class="swiper-slide h-max w-max">
+                                            <div
+                                                class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                                <!-- image of product here -->
+                                                <img class="object-cover w-full h-32 md:h-44  p-7"
+                                                    src="/src/images/products/product-1.png" alt="">
+                                                <!-- product name HERE -->
+                                                <div class="p-1 border-b border-b-purple-500">
+                                                    <h1 class=" font-bold text-gray-800 text-center dark:text-white">
+                                                        لگ ورزشی اسپورت</h1>
+                                                </div>
+                                                <!-- product price and OFFPRICE HERE -->
+                                                <div
+                                                    class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                    <h1
+                                                        class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                        ۲۳۸,۰۰۰ تومان <del class="text-gray-500 text-xs">۲۸۰،۰۰۰</del>
+                                                    </h1>
+                                                    <!-- add to cart on mobile screen here -->
+                                                    <a href="#" class="flex lg:hidden">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </a>
+                                                    <!-- add to cart on desktop screen here -->
+                                                    <a href="#"
+                                                        class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                        <p class="mx-auto flex">
+                                                            خرید محصول
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                            </svg>
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- item 8 -->
+                                        <div class="swiper-slide h-max w-max">
+                                            <div
+                                                class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                                <!-- image of product here -->
+                                                <img class="object-cover w-full h-32 md:h-44  p-7"
+                                                    src="/src/images/products/product-1.png" alt="">
+                                                <!-- product name HERE -->
+                                                <div class="p-1 border-b border-b-purple-500">
+                                                    <h1 class=" font-bold text-gray-800 text-center dark:text-white">
+                                                        لگ ورزشی اسپورت</h1>
+                                                </div>
+                                                <!-- product price and OFFPRICE HERE -->
+                                                <div
+                                                    class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                    <h1
+                                                        class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                        ۲۳۸,۰۰۰ تومان <del class="text-gray-500 text-xs">۲۸۰،۰۰۰</del>
+                                                    </h1>
+                                                    <!-- add to cart on mobile screen here -->
+                                                    <a href="#" class="flex lg:hidden">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </a>
+                                                    <!-- add to cart on desktop screen here -->
+                                                    <a href="#"
+                                                        class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                        <p class="mx-auto flex">
+                                                            خرید محصول
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                            </svg>
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- navigation and scrollbar for swiper -->
+                                    <div class="after:hidden swiper-button-next"></div>
+                                    <div class="after:hidden swiper-button-prev"></div>
+                                    <div class="swiper-scrollbar"></div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                </section>
+                <!-- categories of shop -->
+                <section class="bg-white text-center">
+                    <!-- category title -->
+                    <h1 class="text-2xl font-bold">دسته بندی های نگارشاپ</h1>
+                    <div dir="rtl" class="grid grid-cols-3  lg:grid-cols-6 w-full my-8 bg-zinc-100">
+                        <div class="text-center flex mx-auto my-2">
+                            <a href="#">
+                                <img src="/src/images/smart-collection.png"
+                                    class="w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 mx-auto" alt="">
+                                <h3 class="text-sm md:text-md lg:text-lg"> کالای دیجیتال</h3>
+                            </a>
+                        </div>
+                        <div class="text-center mx-auto my-2">
+                            <a href="#">
+                                <img src="/src/images/House-collection.png"
+                                    class="w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 mx-auto" alt="">
+                                <h3 class="text-sm md:text-md lg:text-lg"> خانه و آشپزخانه</h3>
+                            </a>
+                        </div>
+                        <div class="text-center mx-auto my-2">
+                            <a href="">
+                                <img src="/src/images/office-collection.png"
+                                    class="w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 mx-auto" alt="">
+                                <h3 class="text-sm md:text-md lg:text-lg"> ابزار اداری</h3>
+                            </a>
+                        </div>
+                        <div class="text-center mx-auto my-2">
+                            <a href="#">
+                                <img src="/src/images/babies-collection.png"
+                                    class="w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 mx-auto" alt="">
+                                <h3 class="text-sm md:text-md lg:text-lg">کودک و نوزاد</h3>
+                            </a>
+                        </div>
+                        <div class="text-center mx-auto my-2">
+                            <a href="#" class="text-center">
+                                <img src="/src/images/arayesh.png"
+                                    class="w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 mx-auto" alt="">
+                                <h3 class="text-sm md:text-md lg:text-lg"> آرایشی و بهداشتی</h3>
+                            </a>
+                        </div>
+                        <div class="text-center mx-auto my-2">
+                            <a href="#">
+                                <img src="/src/images/clothes-collection.png"
+                                    class="w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 mx-auto" alt="">
+                                <h3 class="text-sm md:text-md lg:text-lg"> مد و پوشاک</h3>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- digital category -->
+                <section class="mt-16">
+                    <div dir="rtl" class="container sm:mx-auto grid grid-cols-4 gap-5 w-full mx-2">
+                        <div
+                            class="bg-stone-100 w-full h-100 p-3 rounded-lg col-span-4 lg:col-span-3 text-center shadow-lg shadow-gray-300">
+                            <h1 class="font-bold text-xl w-max border-b-2 border-b-purple-500 my-2 ">کالای دیجیتال</h1>
+                            <div class="bg-white flex p-2 rounded-lg">
+                                <div class="swiper mySwiper5 w-full h-80 lg:h-84 py-5">
+                                    <div class="swiper-wrapper text-center">
+                                        <!-- first digital product -->
+                                        <div class="swiper-slide">
+                                            <div
+                                                class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                                <!-- image of product here -->
+                                                <img class="object-cover w-full h-52 p-10"
+                                                    src="/src/images/digi-product2.png" alt="">
+                                                <!-- product name HERE -->
+                                                <div class="p-1 border-b border-b-purple-500">
+                                                    <h1 class=" font-bold text-gray-800 text-center ">
+                                                        پلی استیشن ۵
+                                                    </h1>
+                                                </div>
+                                                <!-- product price and OFFPRICE HERE -->
+                                                <div
+                                                    class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                    <h1
+                                                        class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                        ۲۲,۰۰۰,۰۰۰ تومان</h1>
+                                                    <!-- add to cart on mobile screen here -->
+                                                    <a href="#" class="flex lg:hidden">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </a>
+                                                    <!-- add to cart on desktop screen here -->
+                                                    <a href="#"
+                                                        class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                        <p class="mx-auto flex">
+                                                            خرید محصول
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                            </svg>
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!-- second digital product -->
+                                        <div class="swiper-slide">
+                                            <div
+                                                class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                                <!-- image of product here -->
+                                                <img class="object-cover w-full h-52  p-2"
+                                                    src="/src/images/digi-product1.png" alt="">
+                                                <!-- product name HERE -->
+                                                <div class="p-1 border-b border-b-purple-500">
+                                                    <h1 class=" font-bold text-gray-800 text-center dark:text-white">
+                                                        مک بوک پرو m1 2020
+                                                    </h1>
+                                                </div>
+                                                <!-- product price and OFFPRICE HERE -->
+                                                <div
+                                                    class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                    <h1
+                                                        class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                        ۴۵,۰۰۰,۰۰۰تومان</h1>
+                                                    <!-- add to cart on mobile screen here -->
+                                                    <a href="#" class="flex lg:hidden">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </a>
+                                                    <!-- add to cart on desktop screen here -->
+                                                    <a href="#"
+                                                        class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                        <p class="mx-auto flex">
+                                                            خرید محصول
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                            </svg>
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- third digital product -->
+                                        <div class="swiper-slide">
+                                            <div
+                                                class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                                <!-- image of product here -->
+                                                <img class="object-cover w-full h-52  p-2"
+                                                    src="/src/images/digi-product3.png" alt="">
+                                                <!-- product name HERE -->
+                                                <div class="p-1 border-b border-b-purple-500">
+                                                    <h1 class=" font-bold text-gray-800 text-center dark:text-white">
+                                                        دورببین عکاسی حرفه ای
+                                                    </h1>
+                                                </div>
+                                                <!-- product price and OFFPRICE HERE -->
+                                                <div
+                                                    class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                    <h1
+                                                        class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                        ۲۳,۰۰۰,۰۰۰تومان</h1>
+                                                    <!-- add to cart on mobile screen here -->
+                                                    <a href="#" class="flex lg:hidden">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </a>
+                                                    <!-- add to cart on desktop screen here -->
+                                                    <a href="#"
+                                                        class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                        <p class="mx-auto flex">
+                                                            خرید محصول
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                            </svg>
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- foruth digital product -->
+                                        <div class="swiper-slide">
+                                            <div
+                                                class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                                <!-- image of product here -->
+                                                <img class="object-cover w-full h-52  p-2"
+                                                    src="/src/images/digi-product4.png" alt="">
+                                                <!-- product name HERE -->
+                                                <div class="p-1 border-b border-b-purple-500">
+                                                    <h1 class=" font-bold text-gray-800 text-center dark:text-white">
+                                                        پرینتر اچ پی
+                                                    </h1>
+                                                </div>
+                                                <!-- product price and OFFPRICE HERE -->
+                                                <div
+                                                    class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                    <h1
+                                                        class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                        ۴,۶۳۰,۰۰۰ تومان</h1>
+                                                    <!-- add to cart on mobile screen here -->
+                                                    <a href="#" class="flex lg:hidden">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </a>
+                                                    <!-- add to cart on desktop screen here -->
+                                                    <a href="#"
+                                                        class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                        <p class="mx-auto flex">
+                                                            خرید محصول
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                            </svg>
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- fifth digital product -->
+                                        <div class="swiper-slide">
+                                            <div
+                                                class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                                <!-- image of product here -->
+                                                <img class="object-cover w-full h-52  p-2"
+                                                    src="/src/images/digi-product4.png" alt="">
+                                                <!-- product name HERE -->
+                                                <div class="p-1 border-b border-b-purple-500">
+                                                    <h1 class=" font-bold text-gray-800 text-center dark:text-white">
+                                                        پرینتر اچ پی
+                                                    </h1>
+                                                </div>
+                                                <!-- product price and OFFPRICE HERE -->
+                                                <div
+                                                    class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                    <h1
+                                                        class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                        ۴,۶۳۰,۰۰۰ تومان</h1>
+                                                    <!-- add to cart on mobile screen here -->
+                                                    <a href="#" class="flex lg:hidden">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </a>
+                                                    <!-- add to cart on desktop screen here -->
+                                                    <a href="#"
+                                                        class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                        <p class="mx-auto flex">
+                                                            خرید محصول
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                            </svg>
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- sixth digital product -->
+                                        <div class="swiper-slide">
+                                            <div
+                                                class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                                <!-- image of product here -->
+                                                <img class="object-cover w-full h-52  p-2"
+                                                    src="/src/images/digi-product4.png" alt="">
+                                                <!-- product name HERE -->
+                                                <div class="p-1 border-b border-b-purple-500">
+                                                    <h1 class=" font-bold text-gray-800 text-center dark:text-white">
+                                                        پرینتر اچ پی
+                                                    </h1>
+                                                </div>
+                                                <!-- product price and OFFPRICE HERE -->
+                                                <div
+                                                    class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                    <h1
+                                                        class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                        ۴,۶۳۰,۰۰۰ تومان</h1>
+                                                    <!-- add to cart on mobile screen here -->
+                                                    <a href="#" class="flex lg:hidden">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </a>
+                                                    <!-- add to cart on desktop screen here -->
+                                                    <a href="#"
+                                                        class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                        <p class="mx-auto flex">
+                                                            خرید محصول
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                            </svg>
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- seventh digital product -->
+                                        <div class="swiper-slide">
+                                            <div
+                                                class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                                <!-- image of product here -->
+                                                <img class="object-cover w-full h-52  p-2"
+                                                    src="/src/images/digi-product4.png" alt="">
+                                                <!-- product name HERE -->
+                                                <div class="p-1 border-b border-b-purple-500">
+                                                    <h1 class=" font-bold text-gray-800 text-center dark:text-white">
+                                                        پرینتر اچ پی
+                                                    </h1>
+                                                </div>
+                                                <!-- product price and OFFPRICE HERE -->
+                                                <div
+                                                    class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                    <h1
+                                                        class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                        ۴,۶۳۰,۰۰۰ تومان</h1>
+                                                    <!-- add to cart on mobile screen here -->
+                                                    <a href="#" class="flex lg:hidden">
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </a>
+                                                    <!-- add to cart on desktop screen here -->
+                                                    <a href="#"
+                                                        class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                        <p class="mx-auto flex">
+                                                            خرید محصول
+                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2"
+                                                                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                            </svg>
+                                                        </p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- slider navigation and scrollbar -->
+                                    <div class="after:hidden swiper-button-next"></div>
+                                    <div class="after:hidden swiper-button-prev"></div>
+                                    <div class="swiper-scrollbar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="hidden lg:block text-center justify-center bg-violet-200 h-100 w-full p-3 rounded-lg shadow-lg shadow-gray-300">
+                            <h1 class="text-xl font-bold mt-5">پیشنهاد های لحظه ای</h1>
+                            <div class="swiper swiper3 w-56 h-72 mt-5">
+                                <div class="swiper-wrapper">
+                                    <!-- first card -->
+                                    <div class="swiper-slide bg-white rounded-lg pt-1 h-60">
+                                        <div
+                                            class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                            <!-- image of product here -->
+                                            <img class="object-cover w-full h-32 md:h-44  p-2"
+                                                src="/src/images/products/product-2.png" alt="">
+                                            <!-- product name HERE -->
+                                            <div class="p-1 border-b border-b-purple-500">
+                                                <h1 class=" font-bold text-gray-800 text-center dark:text-white">کیف
+                                                    دانش آموزی</h1>
+                                            </div>
+                                            <!-- product price and OFFPRICE HERE -->
+                                            <div
+                                                class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                <h1
+                                                    class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                    ۳۲۹,۰۰۰ تومان <del class="text-gray-500 text-xs">۴۸۰,۰۰۰</del></h1>
+                                                <!-- add to cart on mobile screen here -->
+                                                <a href="#" class="flex lg:hidden">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                    </svg>
+                                                </a>
+                                                <!-- add to cart on desktop screen here -->
+                                                <a href="#"
+                                                    class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                    <p class="mx-auto flex">
+                                                        خرید محصول
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- second card -->
+                                    <div class="swiper-slide bg-white rounded-lg pt-1">
+                                        <div
+                                            class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                            <!-- image of product here -->
+                                            <img class="object-cover w-full h-32 md:h-44  p-2"
+                                                src="/src/images/products/product-3.png" alt="">
+                                            <!-- product name HERE -->
+                                            <div class="p-1 border-b border-b-purple-500">
+                                                <h1 class=" font-bold text-gray-800 text-center dark:text-white">
+                                                    تلویزیون خانگی ۴۳ اینچ</h1>
+                                            </div>
+                                            <!-- product price and OFFPRICE HERE -->
+                                            <div
+                                                class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                <h1
+                                                    class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                    ۴,۴۹۹,۰۰۰ تومان <del class="text-gray-500 text-xs">۴,۹۰۰,۰۰۰</del>
+                                                </h1>
+                                                <!-- add to cart on mobile screen here -->
+                                                <a href="#" class="flex lg:hidden">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                    </svg>
+                                                </a>
+                                                <!-- add to cart on desktop screen here -->
+                                                <a href="#"
+                                                    class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                    <p class="mx-auto flex">
+                                                        خرید محصول
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- third card -->
+                                    <div class="swiper-slide bg-white rounded-lg pt-1">
+                                        <div
+                                            class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                            <!-- image of product here -->
+                                            <img class="object-cover w-full h-32 md:h-44  p-2"
+                                                src="/src/images/products/product-1.png" alt="">
+                                            <!-- product name HERE -->
+                                            <div class="p-1 border-b border-b-purple-500">
+                                                <h1 class=" font-bold text-gray-800 text-center dark:text-white">لگ
+                                                    ورزشی اسپورت</h1>
+                                            </div>
+                                            <!-- product price and OFFPRICE HERE -->
+                                            <div
+                                                class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                <h1
+                                                    class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                    ۲۳۸,۰۰۰ تومان <del class="text-gray-500 text-xs">۲۸۰،۰۰۰</del></h1>
+                                                <!-- add to cart on mobile screen here -->
+                                                <a href="#" class="flex lg:hidden">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                    </svg>
+                                                </a>
+                                                <!-- add to cart on desktop screen here -->
+                                                <a href="#"
+                                                    class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                    <p class="mx-auto flex">
+                                                        خرید محصول
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- foruth card -->
+                                    <div class="swiper-slide bg-white rounded-lg pt-1">
+                                        <div
+                                            class="max-w-xs mx-auto overflow-hidden bg-white rounded-lg shadow-lg cursor-pointer">
+                                            <!-- image of product here -->
+                                            <img class="object-cover w-full h-32 md:h-44  p-2"
+                                                src="/src/images/products/product-4.png" alt="">
+                                            <!-- product name HERE -->
+                                            <div class="p-1 border-b border-b-purple-500">
+                                                <h1 class=" font-bold text-gray-800 text-center dark:text-white"> ست چرم
+                                                    کادویی مردانه</h1>
+                                            </div>
+                                            <!-- product price and OFFPRICE HERE -->
+                                            <div
+                                                class="flex lg:block lg:text-center items-center justify-between bg-white m-1">
+
+                                                <h1
+                                                    class="mx-auto text-xs md:text-md lg:text-lg font-bold text-purple-800">
+                                                    ۴۲۰,۰۰۰ تومان <del class="text-gray-500 text-xs">۸۸۰,۰۰۰</del></h1>
+                                                <!-- add to cart on mobile screen here -->
+                                                <a href="#" class="flex lg:hidden">
+                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                        class="h-7 w-7 text-white p-1 bg-purple-700 rounded-lg"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                    </svg>
+                                                </a>
+                                                <!-- add to cart on desktop screen here -->
+                                                <a href="#"
+                                                    class="mx-auto hidden w-32 lg:flex text-md text-white hover:text-purple-500  bg-purple-500 hover:bg-white border border-purple-500 rounded-lg p-1 cursor-pointer duration-300">
+                                                    <p class="mx-auto flex">
+                                                        خرید محصول
+                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-7 w-7 p-1 rounded-lg" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                                        </svg>
+                                                    </p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="after:hidden swiper-button-next"></div>
+                                <div class="after:hidden swiper-button-prev"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- signs -->
+                <section class="flex text-center justify-center mt-5">
+                    <div dir="rtl" class="w-full sm:container mx-2 text-center rounded-lg mt-10">
+                        <div>
+                            <a href="#">
+                                <img src="/src/images/OFFERS-BIG.png"
+                                    class="rounded-lg w-full h-36 sm:40 md:h-44 lg:h-48">
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mt-5">
+                            <div>
+                                <a href="#">
+                                    <img src="/src/images/OFFERS-BIG2.png"
+                                        class="rounded-lg h-36 sm:h-44 md:h-52 lg:h-64 mx-auto">
+                                </a>
+                            </div>
+                            <div>
+                                <a href="#">
+                                    <img src="/src/images/OFFERS-BIG3.png"
+                                        class="rounded-lg h-36 sm:h-44 md:h-52 lg:h-64 mx-auto">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <!-- Footer section -->
+                <footer class="mt-20">
+                    <div dir="rtl">
+                        <div dir="rtl" class="grid grid-cols-2  md:grid-cols-4 w-full mt-10 bg-zinc-100">
+                            <div class="text-center mx-auto my-2 p-2">
+                                <a href="">
+                                    <img src="/src/images/original.png" class="h-16 w-16 mx-auto" alt="">
+                                    <p class="mt-1 text-md font-medium">ضمانت اصل بودن کالا</p>
+                                </a>
+                            </div>
+                            <div class="text-center mx-auto my-2 p-2">
+                                <a href="#">
+                                    <img src="/src/images/telephone.png" class="h-16 w-16 mx-auto" alt="">
+                                    <p class="mt-1 text-md font-medium">پشتیبانی حرفه ای ۲۴ ساعته</p>
+                                </a>
+                            </div>
+                            <div class="text-center mx-auto my-2 p-2">
+                                <a href="#">
+                                    <img src="/src/images/chronometer.png" class="h-16 w-16 mx-auto" alt="">
+                                    <p class="mt-1 text-md font-medium"> ضمانت بازگشت کالا تا ۷ روز</p>
+                                </a>
+                            </div>
+                            <div class="text-center mx-auto my-2 p-2">
+                                <a href="#">
+                                    <img src="/src/images/truck.png" class="h-16 w-16 mx-auto" alt="">
+                                    <p class="mt-1 text-md  font-medium">تحویل در کمترین زمان</p>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <!-- second section of footer-->
+
+                        <div class="bg-white">
+
+                            <div class="border-b border-b-purple-400 pb-20">
+                                <div
+                                    class="container px-5 pt-10 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+
+                                    <div
+                                        class="grid grid-cols-2 gap-10  md:grid-cols-4  -mb-10  text-center md:text-right">
+                                        <div class="w-52 lg:64 px-4">
+                                            <h2
+                                                class="title-font font-bold text-xl text-gray-900  mb-3 border-b border-b-purple-300 pb-5">
+                                                با نگارشاپ</h2>
+                                            <nav class=" mb-10 ">
+
+                                                <a href="#"
+                                                    class="block my-2 text-gray-600 hover:mr-1 duration-300">اتاق خبر
+                                                    نگارشاپ</a>
+
+                                                <a href="#"
+                                                    class="block my-2 text-gray-600 hover:mr-1 duration-300">فروش در
+                                                    نگارشاپ</a>
+
+                                                <a href="#"
+                                                    class="block my-2 text-gray-600 hover:mr-1 duration-300">همکاری با
+                                                    سازمان‌ها</a>
+
+                                                <a href="#"
+                                                    class="block my-2 text-gray-600 hover:mr-1 duration-300">فرصت‌های
+                                                    شغلی</a>
+
+                                            </nav>
+                                        </div>
+                                        <div class="w-52 lg:w-64  px-4">
+                                            <h2
+                                                class="title-font font-bold text-xl text-gray-900  mb-3 border-b border-b-purple-300 pb-5">
+                                                خدمات مشتریان</h2>
+                                            <nav class="mb-10">
+
+                                                <a href="#"
+                                                    class="block my-2 text-gray-600 hover:mr-1 duration-300 ">پاسخ به
+                                                    پرسش‌های متداول</a>
+
+                                                <a href="#"
+                                                    class="block my-2 text-gray-600 hover:mr-1 duration-300">رویه‌های
+                                                    بازگرداندن
+                                                    کالا</a>
+
+                                                <a href="#"
+                                                    class="block my-2 text-gray-600 hover:mr-1 duration-300">شرایط
+                                                    استفاده</a>
+
+                                                <a href="#"
+                                                    class="block my-2 text-gray-600 hover:mr-1 duration-300">حریم
+                                                    خصوصی</a>
+
+                                            </nav>
+                                        </div>
+                                        <div class="w-52 lg:w-64 px-4">
+                                            <h2
+                                                class="title-font font-bold text-xl text-gray-900  mb-3 border-b border-b-purple-300 pb-5">
+                                                راهنمای خرید </h2>
+                                            <nav class=" mb-10">
+
+                                                <a href="#"
+                                                    class="block my-2 text-gray-600 hover:mr-1 duration-300 hover:text-gray-900">
+                                                    نحوه
+                                                    ثبت سفارش</a>
+
+                                                <a href="#" class="block my-2 text-gray-600 hover:mr-1 duration-300">
+                                                    رویه خرید</a>
+
+                                                <a href="#"
+                                                    class="block my-2 text-gray-600 hover:mr-1 duration-300">شرایط
+                                                    استفاده</a>
+
+                                                <a href="#"
+                                                    class="block my-2 text-gray-600 hover:mr-1 duration-300">حریم
+                                                    خصوصی</a>
+
+                                            </nav>
+                                        </div>
+                                        <div class="w-52  lg:w-64 px-4">
+                                            <h2
+                                                class="title-font font-bold text-xl text-gray-900  mb-3 border-b border-b-purple-300 pb-5">
+                                                درباره ما</h2>
+
+                                            <nav class=" mb-10">
+
+                                                <a href="#"
+                                                    class="block my-2  text-gray-600 hover:mr-1 duration-300">مکان دقیق
+                                                    فروشگاه</a>
+
+                                                <a href="#"
+                                                    class="block my-2 text-gray-600 hover:mr-1 duration-300">تماس با
+                                                    ما</a>
+
+                                                <a href="#" class="block my-2 text-gray-600 hover:mr-1 duration-300 ">
+                                                    گزارش شکایات</a>
+
+                                                <a href="#"
+                                                    class="block my-2 text-gray-600 hover:mr-1 duration-300">خرید
+                                                    حضوری</a>
+
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="container mx-auto my-5">
+                            <!-- searchBox and introduction -->
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 py-10 px-10 ">
+                                <div class="">
+                                    <div>
+                                        <!-- Brand -->
+                                        <div class="h-max w-max">
+                                            <img src="/src/images/logo.png" alt="">
+                                        </div>
+
+                                        <p class="mt-6 block tracking-wider text-gray-600 text-justify">
+                                            دیجی‌کالا به عنوان یکی از قدیمی‌ترین فروشگاه های اینترنتی با بیش از یک دهه
+                                            تجربه، با پایبندی به سه اصل کلیدی، پرداخت در محل، 7 روز ضمانت بازگشت کالا و
+                                            تضمین اصل‌بودن کالا، موفق شده تا همگام با فروشگاه‌های معتبر جهان، به
+                                            بزرگ‌ترین فروشگاه اینترنتی ایران تبدیل شود. به محض ورود به دیجی‌کالا با یک
+                                            سایت پر از کالا رو به رو می‌شوید!
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <form class="w-max">
+                                        <label for="email" class="font-bold text-xl text-gray-900"> خبرنامه </label>
+                                        <h5 class="block py-5 text-gray-600 "> با عضویت در خبرنامه از آخرین اخبار و
+                                            محصولات سایت مطلع شوید...</h5>
+                                        <div class="p-1  sm:flex sm:items-center rounded-md">
+                                            <input
+                                                class="w-max md:w-80 md:flex md:justify-center h-12 p-2 rounded-xl text-gray-700 bg-gray-100 shadow-lg  focus:shadow-lg focus:outline-none focus:ring-opacity-40  duration-300"
+                                                type="email" id="email" placeholder="آدرس ایمیل" />
+
+                                            <button
+                                                class="w-32 mr-10 sm:mr-10 text-white h-12 px-6 py-3 bg-purple-500 hover:bg-white hover:text-purple-500 hover:border hover:border-purple-500 duration-500 rounded-md sm:ml-2"
+                                                type="submit">
+                                                عضوم کن
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- copyright section -->
+                        <div class="text-white relative pb-1 mt-12 border-t  border-purple-400">
+                            <div class="flex justify-center">
+                                <p class="absolute top-3 text-sm text-center text-gray-400 lg:text-left">
+                                    Copyright &copy; فروشگاه نگارشاپ ، تمامی حقوق این سایت محفوظ است.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- main js file -->
+                <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+                <script src="/src/js/Home.js"></script>
+
+
+</body>
+
+</html>
